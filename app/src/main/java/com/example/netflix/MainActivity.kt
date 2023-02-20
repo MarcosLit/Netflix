@@ -1,6 +1,7 @@
 package com.example.netflix
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
@@ -16,7 +17,36 @@ class MainActivity : AppCompatActivity() {
         var hija = findViewById<ImageButton>(R.id.usuarioHija)
         var papa = findViewById<ImageButton>(R.id.usuarioPapa)
         var mama = findViewById<ImageButton>(R.id.usuarioMama)
+        var cambio : Intent
+        var frase : String
 
-        Toast.makeText(this,hijo.background.toString(), Toast.LENGTH_SHORT).show()
+        hijo.setOnClickListener(){
+            frase="tigre"
+            cambio=Intent(this, PaginaPrincipal::class.java)
+            cambio.putExtra("perfil", frase)
+            startActivity(cambio)
+        }
+
+        hija.setOnClickListener(){
+            frase="hija"
+            cambio=Intent(this, PaginaPrincipal::class.java)
+            cambio.putExtra("perfil", frase)
+            startActivity(cambio)
+        }
+
+        papa.setOnClickListener(){
+            frase="papa"
+            cambio=Intent(this, PaginaPrincipal::class.java)
+            cambio.putExtra("perfil", frase)
+            startActivity(cambio)
+        }
+
+        mama.setOnClickListener(){
+            frase="mama"
+            cambio=Intent(this, PaginaPrincipal::class.java)
+            cambio.putExtra("perfil", frase)
+            startActivity(cambio)
+        }
+
     }
 }
